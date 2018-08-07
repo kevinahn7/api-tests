@@ -52,7 +52,7 @@ $(document).ready(function() {
     event.preventDefault();
     let q = $("#gifText").val();
     $.ajax({
-        url: 'http://api.giphy.com/v1/gifs/random?api_key=FIvxqjsjEcQl8wQi1wJjpAz6EPeevyog&tag='+q,
+        url: 'http://api.giphy.com/v1/gifs/random?api_key=u5bE60ZPhs0lqnCQUjYR6hQcJKV68l7L&tag='+q,
         type: 'GET',
         data: {
           format: 'json'
@@ -130,24 +130,23 @@ $(document).ready(function() {
 
 
   //learn to code ~ with jquery Pokemon
-  let p;
-  $("#pokemonForm").submit(function(event) {
-    event.preventDefault();
-    p = $("#pokemonNumber").val();
-    $.ajax({
-        url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
-        type: 'GET',
-        data: {
-          format: 'json'
-        },
-        success: function(response) {
-          $('#pokemon').html("<center><p>Number " + p + "<p><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_default + "'></center>");
-        },
-        error: function() {
-          $('#pokemon').html("There was an error processing your request. Please try again.");
-        }
-      });
-    });
+  // $("#pokemonForm").submit(function(event) {
+  //   event.preventDefault();
+  //   let p = $("#pokemonNumber").val();
+  //   $.ajax({
+  //       url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
+  //       type: 'GET',
+  //       data: {
+  //         format: 'json'
+  //       },
+  //       success: function(response) {
+  //         $('#pokemon').html("<center><p>Number " + p + "<p><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_default + "'></center>");
+  //       },
+  //       error: function() {
+  //         $('#pokemon').html("There was an error processing your request. Please try again.");
+  //       }
+  //     });
+  //   });
 
 
 
@@ -166,7 +165,7 @@ $(document).ready(function() {
             let q = response.name;
             console.log(response.name);
             $.ajax({
-                url: 'http://api.giphy.com/v1/gifs/random?api_key=FIvxqjsjEcQl8wQi1wJjpAz6EPeevyog&tag='+q,
+                url: 'http://api.giphy.com/v1/gifs/random?api_key=u5bE60ZPhs0lqnCQUjYR6hQcJKV68l7L&tag='+q,
                 type: 'GET',
                 data: {
                   format: 'json'
