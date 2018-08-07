@@ -28,7 +28,7 @@ $(document).ready(function() {
   //   event.preventDefault();
   //   let q = $("#gifText").val();
   //   let request = new XMLHttpRequest();
-  //   let url = 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q;
+  //   let url = 'http://api.giphy.com/v1/gifs/random?api_key=nKPex5EUUbLFAV5DFDuvbre4iQRFfJfn&tag='+q;
   //   let data;
   //   request.onreadystatechange = function() {
   //     if (this.readyState === 4 && this.status === 200) {
@@ -52,7 +52,7 @@ $(document).ready(function() {
     event.preventDefault();
     let q = $("#gifText").val();
     $.ajax({
-        url: 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q,
+        url: 'http://api.giphy.com/v1/gifs/random?api_key=JBQw613DTW0CinHk6dwtPppxIT3SYq8A&tag='+q,
         type: 'GET',
         data: {
           format: 'json'
