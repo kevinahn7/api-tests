@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // //Guy on github
+  //Guy on github
   // $("#newGif").click(function() {
   //   let q = "finger guns"; // search query
   //
@@ -24,8 +24,9 @@ $(document).ready(function() {
 
 
   //learn to code ~ with JavaScript
-  // $("#newGif").click(function() {
-  //   let q = "";
+  // $("#getGif").submit(function(event) {
+  //   event.preventDefault();
+  //   let q = $("#gifText").val();
   //   let request = new XMLHttpRequest();
   //   let url = 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q;
   //   let data;
@@ -47,8 +48,9 @@ $(document).ready(function() {
 
 
   //learn to code ~ with jquery
-  $("#newGif").click(function() {
-    let q = "";
+  $("#getGif").submit(function(event) {
+    event.preventDefault();
+    let q = $("#gifText").val();
     $.ajax({
         url: 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q,
         type: 'GET',
