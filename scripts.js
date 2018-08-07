@@ -128,9 +128,10 @@ $(document).ready(function() {
 
 
   //learn to code ~ with jquery
+  let p;
   $("#pokemonForm").submit(function(event) {
     event.preventDefault();
-    let p = $("#pokemonNumber").val();
+    p = $("#pokemonNumber").val();
     $.ajax({
         url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
         type: 'GET',
@@ -139,12 +140,34 @@ $(document).ready(function() {
         },
         success: function(response) {
           $('#pokemon').html("<center><p>Number " + p + "<p><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_default + "'></center>");
+          let q = response.name;
+          console.log(response.name);
+          $.ajax({
+              url: 'http://api.giphy.com/v1/gifs/random?api_key=JBQw613DTW0CinHk6dwtPppxIT3SYq8A&tag='+q,
+              type: 'GET',
+              data: {
+                format: 'json'
+              },
+              success: function(response) {
+                console.log(response);
+                $('#both').html("<center><img src = '" + response.data.image_url + "'></center>");
+              },
+              error: function() {
+                $('#both').html("There was an error processing your request. Please try again.");
+              }
+            });
         },
         error: function() {
           $('#pokemon').html("There was an error processing your request. Please try again.");
         }
       });
+
+
+
+
+
     });
+
 
 
 });
