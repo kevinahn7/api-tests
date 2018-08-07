@@ -1,8 +1,9 @@
 $(document).ready(function() {
+  // //Guy on github
   // let q = "finger guns"; // search query
   //
   // let request = new XMLHttpRequest;
-  // request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=qmmVAJKAWCLcMoOlVbsSDvBnkJEPuxDE&tag='+q, true);
+  // request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q, true);
   // request.send();
   //
   // request.onload = function() {
@@ -20,29 +21,46 @@ $(document).ready(function() {
   // };
 
 
+  //learn to code ~ with JavaScript
+  // let q = "";
+  // let request = new XMLHttpRequest();
+  // let url = 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q;
+  // let data;
+  // request.onreadystatechange = function() {
+  //   if (this.readyState === 4 && this.status === 200) {
+  //     data = JSON.parse(request.responseText).data.image_url;
+  //     getElements();
+  //   }
+  // }
+  //
+  // request.open("GET", url, true);
+  // request.send();
+  //
+  // getElements = function() {
+  //   document.getElementById("giphyme").innerHTML = '<center><img src = "'+data+'"  title="GIF via Giphy"></center>';
+  // }
 
+
+
+  //learn to code ~ with jquery
   let q = "";
-  let request = new XMLHttpRequest();
-  let url = 'http://api.giphy.com/v1/gifs/random?api_key=qmmVAJKAWCLcMoOlVbsSDvBnkJEPuxDE&tag='+q;
-  let data;
-  request.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-      data = JSON.parse(request.responseText).data.image_url;
-      getElements();
-    }
-  }
-
-  request.open("GET", url, true);
-  request.send();
-
-  getElements = function() {
-    document.getElementById("giphyme").innerHTML = '<center><img src = "'+data+'"  title="GIF via Giphy"></center>';
-  }
+  $.ajax({
+      url: 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q,
+      type: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: function(response) {
+        $('#giphyme').html("<center><img src = '" + response.data.image_url + "'></center>");
+      },
+      error: function() {
+        $('#giphyme').html("There was an error processing your request. Please try again.");
+      }
+    });
 
 
 
-
-
+  //Will and Nates way
   // let request = new XMLHttpRequest;
   //
   //
@@ -60,7 +78,7 @@ $(document).ready(function() {
   //   console.log('connection error');
   // };
   //
-  // request.open('GET', 'https://api.giphy.com/v1/stickers/random?api_key=qmmVAJKAWCLcMoOlVbsSDvBnkJEPuxDE&tag=salamander', true);
+  // request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag=', true);
   // request.send();
 
 
