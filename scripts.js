@@ -23,7 +23,7 @@ $(document).ready(function() {
   // )};
 
 
-  //learn to code ~ with JavaScript
+  //learn to code ~ with JavaScript Giphy
   // $("#getGif").submit(function(event) {
   //   event.preventDefault();
   //   let q = $("#gifText").val();
@@ -47,12 +47,12 @@ $(document).ready(function() {
 
 
 
-  //learn to code ~ with jquery
+  //learn to code ~ with jquery Giphy
   $("#getGif").submit(function(event) {
     event.preventDefault();
     let q = $("#gifText").val();
     $.ajax({
-        url: 'http://api.giphy.com/v1/gifs/random?api_key=JBQw613DTW0CinHk6dwtPppxIT3SYq8A&tag='+q,
+        url: 'http://api.giphy.com/v1/gifs/random?api_key=FIvxqjsjEcQl8wQi1wJjpAz6EPeevyog&tag='+q,
         type: 'GET',
         data: {
           format: 'json'
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
 
 
-  //Will and Nates way
+  //Will and Nates way Giphy
   // let request = new XMLHttpRequest;
   //
   //
@@ -99,6 +99,8 @@ $(document).ready(function() {
 
   //Pokemon API
 
+
+  // pokemon js
   // $("#pokemonForm").submit(function(event) {
   //   event.preventDefault();
   //   let p = document.getElementById("pokemonNumber").value;
@@ -127,7 +129,7 @@ $(document).ready(function() {
 
 
 
-  //learn to code ~ with jquery
+  //learn to code ~ with jquery Pokemon
   let p;
   $("#pokemonForm").submit(function(event) {
     event.preventDefault();
@@ -140,34 +142,48 @@ $(document).ready(function() {
         },
         success: function(response) {
           $('#pokemon').html("<center><p>Number " + p + "<p><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_default + "'></center>");
-          let q = response.name;
-          console.log(response.name);
-          $.ajax({
-              url: 'http://api.giphy.com/v1/gifs/random?api_key=JBQw613DTW0CinHk6dwtPppxIT3SYq8A&tag='+q,
-              type: 'GET',
-              data: {
-                format: 'json'
-              },
-              success: function(response) {
-                console.log(response);
-                $('#both').html("<center><img src = '" + response.data.image_url + "'></center>");
-              },
-              error: function() {
-                $('#both').html("There was an error processing your request. Please try again.");
-              }
-            });
         },
         error: function() {
           $('#pokemon').html("There was an error processing your request. Please try again.");
         }
       });
-
-
-
-
-
     });
 
+
+
+    //learn to code with jQuery conbmining pokemon with giphy
+    $("#pokemonForm").submit(function(event) {
+      event.preventDefault();
+      let p = $("#pokemonNumber").val();
+      $.ajax({
+          url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
+          type: 'GET',
+          data: {
+            format: 'json'
+          },
+          success: function(response) {
+            $('#pokemon').html("<center><p>Number " + p + "<p><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_default + "'></center>");
+            let q = response.name;
+            console.log(response.name);
+            $.ajax({
+                url: 'http://api.giphy.com/v1/gifs/random?api_key=FIvxqjsjEcQl8wQi1wJjpAz6EPeevyog&tag='+q,
+                type: 'GET',
+                data: {
+                  format: 'json'
+                },
+                success: function(response) {
+                  $('#both').html("<center><img src = '" + response.data.image_url + "'></center>");
+                },
+                error: function() {
+                  $('#both').html("There was an error processing your request. Please try again.");
+                }
+              });
+          },
+          error: function() {
+            $('#pokemon').html("There was an error processing your request. Please try again.");
+          }
+        });
+      });
 
 
 });
