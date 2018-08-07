@@ -43,20 +43,20 @@ $(document).ready(function() {
 
 
   //learn to code ~ with jquery
-  let q = "";
-  $.ajax({
-      url: 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q,
-      type: 'GET',
-      data: {
-        format: 'json'
-      },
-      success: function(response) {
-        $('#giphyme').html("<center><img src = '" + response.data.image_url + "'></center>");
-      },
-      error: function() {
-        $('#giphyme').html("There was an error processing your request. Please try again.");
-      }
-    });
+  // let q = "";
+  // $.ajax({
+  //     url: 'http://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag='+q,
+  //     type: 'GET',
+  //     data: {
+  //       format: 'json'
+  //     },
+  //     success: function(response) {
+  //       $('#giphyme').html("<center><img src = '" + response.data.image_url + "'></center>");
+  //     },
+  //     error: function() {
+  //       $('#giphyme').html("There was an error processing your request. Please try again.");
+  //     }
+  //   });
 
 
 
@@ -81,6 +81,54 @@ $(document).ready(function() {
   // request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=rtRsFZTvQcH0dHcUjv9HH80EVzMzpBmR&tag=', true);
   // request.send();
 
+
+
+
+
+
+
+  //Pokemon API
+
+  // let p = "7";
+  // let request = new XMLHttpRequest();
+  // let url = 'http://pokeapi.co/api/v2/pokemon/'+p;
+  // let data;
+  // request.onreadystatechange = function() {
+  //   if (this.readyState === 4 && this.status === 200) {
+  //     data = JSON.parse(request.responseText).sprites.front_shiny;
+  //     getElements();
+  //   }
+  // }
+  //
+  // request.open("GET", url, true);
+  // request.send();
+  //
+  // getElements = function() {
+  //   document.getElementById("pokemon").innerHTML = '<center><img src = "'+data+'"  title="GIF via Giphy"></center>';
+  // }
+
+
+
+
+
+
+
+
+  // //learn to code ~ with jquery
+  // let p = "7";
+  // $.ajax({
+  //     url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
+  //     type: 'GET',
+  //     data: {
+  //       format: 'json'
+  //     },
+  //     success: function(response) {
+  //       $('#pokemon').html("<center><img src = '" + response.sprites.front_shiny + "'></center>");
+  //     },
+  //     error: function() {
+  //       $('#pokemon').html("There was an error processing your request. Please try again.");
+  //     }
+  //   });
 
 
 });
