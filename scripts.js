@@ -95,7 +95,7 @@ $(document).ready(function() {
   // let data;
   // request.onreadystatechange = function() {
   //   if (this.readyState === 4 && this.status === 200) {
-  //     data = JSON.parse(request.responseText).sprites.front_shiny;
+  //     data = JSON.parse(request.responseText);
   //     getElements();
   //   }
   // }
@@ -104,7 +104,7 @@ $(document).ready(function() {
   // request.send();
   //
   // getElements = function() {
-  //   document.getElementById("pokemon").innerHTML = '<center><img src = "'+data+'"  title="GIF via Giphy"></center>';
+  //   document.getElementById("pokemon").innerHTML = '<center><p>This is a ' + data.name + '</p><img src = "'+data.sprites.front_shiny+'"  title="GIF via Giphy"></center>';
   // }
 
 
@@ -123,7 +123,7 @@ $(document).ready(function() {
   //       format: 'json'
   //     },
   //     success: function(response) {
-  //       $('#pokemon').html("<center><img src = '" + response.sprites.front_shiny + "'></center>");
+  //       $('#pokemon').html("<center><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_shiny + "'></center>");
   //     },
   //     error: function() {
   //       $('#pokemon').html("There was an error processing your request. Please try again.");
