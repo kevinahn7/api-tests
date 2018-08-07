@@ -104,7 +104,7 @@ $(document).ready(function() {
   // request.send();
   //
   // getElements = function() {
-  //   document.getElementById("pokemon").innerHTML = '<center><p>This is a ' + data.name + '</p><img src = "'+data.sprites.front_shiny+'"  title="GIF via Giphy"></center>';
+  //   document.getElementById("pokemon").innerHTML = '<center><p>This is a ' + data.name + '</p><img src = "'+data.sprites.front_default+'"  title="GIF via Giphy"></center>';
   // }
 
 
@@ -114,7 +114,7 @@ $(document).ready(function() {
 
 
 
-  // //learn to code ~ with jquery
+  //learn to code ~ with jquery
   // let p = "7";
   // $.ajax({
   //     url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
@@ -123,7 +123,7 @@ $(document).ready(function() {
   //       format: 'json'
   //     },
   //     success: function(response) {
-  //       $('#pokemon').html("<center><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_shiny + "'></center>");
+  //       $('#pokemon').html("<center><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_default + "'></center>");
   //     },
   //     error: function() {
   //       $('#pokemon').html("There was an error processing your request. Please try again.");
