@@ -89,23 +89,26 @@ $(document).ready(function() {
 
   //Pokemon API
 
-  // let p = "7";
-  // let request = new XMLHttpRequest();
-  // let url = 'http://pokeapi.co/api/v2/pokemon/'+p;
-  // let data;
-  // request.onreadystatechange = function() {
-  //   if (this.readyState === 4 && this.status === 200) {
-  //     data = JSON.parse(request.responseText);
-  //     getElements();
+  // $("#pokemonForm").submit(function(event) {
+  //   event.preventDefault();
+  //   let p = document.getElementById("pokemonNumber").value;
+  //   let request = new XMLHttpRequest();
+  //   let url = 'http://pokeapi.co/api/v2/pokemon/'+p;
+  //   let data;
+  //   request.onreadystatechange = function() {
+  //     if (this.readyState === 4 && this.status === 200) {
+  //       data = JSON.parse(request.responseText);
+  //       getElements();
+  //     }
   //   }
-  // }
   //
-  // request.open("GET", url, true);
-  // request.send();
+  //   request.open("GET", url, true);
+  //   request.send();
   //
-  // getElements = function() {
-  //   document.getElementById("pokemon").innerHTML = '<center><p>This is a ' + data.name + '</p><img src = "'+data.sprites.front_default+'"  title="GIF via Giphy"></center>';
-  // }
+  //   getElements = function() {
+  //     document.getElementById("pokemon").innerHTML = '<center><p>Number ' + p + '<p><p>This is a ' + data.name + '</p><img src = "'+data.sprites.front_default+'"  title="GIF via Giphy"></center>';
+  //   }
+  // });
 
 
 
@@ -115,20 +118,23 @@ $(document).ready(function() {
 
 
   //learn to code ~ with jquery
-  // let p = "7";
-  // $.ajax({
-  //     url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
-  //     type: 'GET',
-  //     data: {
-  //       format: 'json'
-  //     },
-  //     success: function(response) {
-  //       $('#pokemon').html("<center><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_default + "'></center>");
-  //     },
-  //     error: function() {
-  //       $('#pokemon').html("There was an error processing your request. Please try again.");
-  //     }
-  //   });
+  $("#pokemonForm").submit(function(event) {
+    event.preventDefault();
+    let p = $("#pokemonNumber").val();
+    $.ajax({
+        url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
+        type: 'GET',
+        data: {
+          format: 'json'
+        },
+        success: function(response) {
+          $('#pokemon').html("<center><p>Number " + p + "<p><p>This is a " + response.name + "</p><img src = '" + response.sprites.front_default + "'></center>");
+        },
+        error: function() {
+          $('#pokemon').html("There was an error processing your request. Please try again.");
+        }
+      });
+    });
 
 
 });
