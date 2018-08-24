@@ -155,7 +155,7 @@ $(document).ready(function() {
       event.preventDefault();
       let p = $("#pokemonNumber").val();
       $.ajax({
-          url: 'http://pokeapi.co/api/v2/pokemon/'+ p,
+          url: 'https://pokeapi.co/api/v2/pokemon/'+ p,
           type: 'GET',
           data: {
             format: 'json'
